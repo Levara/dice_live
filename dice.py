@@ -1,7 +1,7 @@
 import random
 import os,sys
 
-def main(): 
+def parse_params():
     if len(sys.argv) == 1:
         num_sides = int(input("Enter number of sides for a dice: "))
         num_dices = int(input("Enter number of dices: "))
@@ -15,6 +15,10 @@ def main():
     else:
         print("Wrong number of parameters!")
         exit(1)
+    return [ num_sides, num_dices ]
+
+def main(): 
+    num_sides, num_dices = parse_params()
 
     for i in range(num_dices):
         roll = random.randint(1,num_sides)
