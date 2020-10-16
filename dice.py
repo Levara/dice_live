@@ -1,7 +1,8 @@
 import random
 
-def main():
-    roll = random.randint(1,6)
+def main(): 
+    num_sides = int(input("Enter number of sides for a dice:"))
+    roll = random.randint(1,num_sides)
     print("Dice roll is %d"%(roll))
 
 if __name__ == "__main__":
