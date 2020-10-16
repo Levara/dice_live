@@ -17,12 +17,26 @@ def parse_params():
         exit(1)
     return [ num_sides, num_dices ]
 
+def print_help():
+    print("akdsj fadskfjsad kjfs")
+    print("akdsj fadskfjsad kjfs")
+    print("akdsj fadskfjsad kjfs")
+    print("akdsj fadskfjsad kjfs")
+
 def main(): 
     num_sides, num_dices = parse_params()
 
-    for i in range(num_dices):
-        roll = random.randint(1,num_sides)
-        print("Dice [%d] roll is %d"%(i+1, roll))
+    while True:
+        line = input("Roll? >> ")
+
+        if line == "exit":
+            exit(0)
+        elif line == "":
+            for i in range(num_dices):
+                roll = random.randint(1,num_sides)
+                print("Dice [%d] roll is %d"%(i+1, roll))
+        else: 
+            print_help()
 
 if __name__ == "__main__":
     main()
