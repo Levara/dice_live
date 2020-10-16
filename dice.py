@@ -35,6 +35,20 @@ def main():
             for i in range(num_dices):
                 roll = random.randint(1,num_sides)
                 print("Dice [%d] roll is %d"%(i+1, roll))
+        elif line == "config":
+            num_sides_in = int(input("Enter number of sides for a dice: "))
+            #sanity check
+            if num_sides_in >= 4 and num_sides_in <= 20:
+                num_sides = num_sides_in
+            else:
+                print("Wrong number of sides")
+
+            num_dices_in = int(input("Enter number of dices: "))
+            if num_dices_in >= 1 and num_dices_in <= 4:
+                num_dices = num_dices_in
+            else:
+                print("Wrong number of dices")
+
         else: 
             print_help()
 
